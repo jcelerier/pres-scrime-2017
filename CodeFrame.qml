@@ -46,7 +46,7 @@ import Qt.labs.presentation 1.0
 Frame {
     id: slide;
 
-    property string codeFontFamily: parent.codeFontFamily;
+    property string codeFontFamily: "Fira Code";
     property string code;
     property real codeFontSize: baseFontSize * 0.6;
 

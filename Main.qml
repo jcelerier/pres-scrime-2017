@@ -39,13 +39,12 @@
 **
 ****************************************************************************/
 
-import QtQuick.Controls 2.1 as QC
+import QtQuick.Controls 2.2 as QC
 import CreativeControls 1.0 as CC
 import Ossia 1.0 as Ossia
 import Qt.labs.presentation 1.0
 import QtQuick 2.5
 import QtMultimedia 5.5
-
 
 Presentation
 {
@@ -102,22 +101,150 @@ Presentation
 
     Frame {
         title: "Arbres de données"
+        content: [
+            "Objectif:",
+            " Représenter modèles d'objets des applis créatives",
+            "  Souvent arborescent",
+            "  Quid des cas non-arborescents ?",
+            " Rendre ces modèles accessibles par réseau",
+            "  Protocoles: OSC, Minuit, OSCQuery...",
+            "  Types: float, int, bool, string, vec<2 .. 4>, char, list"
+        ]
     }
 
     Frame {
         title: "Utilisation dans les environnements"
     }
+    CodeFrame
+    {
+        title: "C++"
+        code:
+'auto& node = find_or_create_node(device, "/test/my_int");
+auto address = node.create_address(val_type::INT);
 
+node.set(access_mode_attribute{}, access_mode::GET);
+node.set(bounding_mode_attribute{}, bounding_mode::FOLD);
+node.set(domain_attribute{}, make_domain(2, 14));
+node.set(description_attribute{}, "an integral value");
+
+address->add_callback([] (const auto& val) {
+    std::cout << val << " ";
+  });
+
+address->push_value(5678);'
+    }
+    CodeFrame
+    {
+        title: "openFrameworks"
+        code:
+            'ossia::Parameter<bool> _fill;
+ossia::Parameter<ofColor> _color;
+ossia::ParameterGroup _sizeParams;
+...
+_circleParams.setup(_parent_node, "circle");
+
+_sizeParams.setup(_circleParams, "sizeParams");
+_radius.setup(_sizeParams,"radius",10.,1.,100.);
+_position.setup(_sizeParams,
+                "position",
+                ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2),
+                ofVec2f(0., 0.), // Min
+                ofVec2f(ofGetWidth(), ofGetHeight())); // Max'
+    }
+    CodeFrame
+    {
+        title: "Python"
+        code:
+            '# create a node, create a tuple address and initialize it
+tuple_node = local_device.add_node("/test/value/tuple")
+tuple_address = tuple_node.create_address(
+                    ossia.ValueType.Tuple)
+tuple_value = ossia.Value([
+    ossia.Value(44100),
+    ossia.Value("test.wav"),
+    ossia.Value(0.9)]
+    )
+tuple_address.push_value(tuple_value)
+
+# attach a callback function to the boolean address
+def bool_value_callback(v):
+    print(v.get())
+    bool_address.add_callback(bool_value_callback)'
+    }
+    CodeFrame
+    {
+        title: "Unity3D"
+        code:
+            'public class Foo : public MonoBehaviour
+{
+  [Ossia.Attribute]
+  int foo;
+}'
+    }
+    CodeFrame
+    {
+        title: "QML"
+        code:
+            "Item {
+  Ossia.Node { name: 'test' }
+  AngleSlider {
+    // Reads and writes from /test/angle
+    Ossia.Property on angle {
+      min: -90
+      max: 0
+      bounding: Ossia.Context.Clip
+    }
+  }
+}"
+    }
+    CodeFrame
+    {
+        title: "C"
+        code:
+            "
+OSSIA_EXPORT
+bool ossia_device_update_namespace(
+         ossia_device_t device);
+
+OSSIA_EXPORT
+ossia_node_t ossia_device_get_root_node(
+         ossia_device_t device);
+
+OSSIA_EXPORT
+const char* ossia_device_get_name(
+         ossia_device_t node);
+
+//// Node ////
+OSSIA_EXPORT
+ossia_node_t ossia_node_add_child(
+         ossia_node_t node,
+         const char * name);"
+    }
+    Frame {
+        title: "PureData"
+        Image {
+            source: "file:images/examples/ossiapd.png"
+            anchors.centerIn: parent
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
+    }
     Frame {
         title: "Définition d'un arbre"
     }
 
+
     Frame {
         title: "Performances"
 
+        DeviceChart { }
         // Performances de la communication réseau, par OSC.
         // Performances de la création / modification d'un arbre
         // Performances de la découverte automatique par OSCQuery, en local, en distant
+
     }
 
     Frame {
@@ -127,7 +254,7 @@ Presentation
 
     Frame {
         title: "OSCQuery"
-        Oscquery { }
+        //Oscquery { }
     }
 
     Frame {
@@ -223,9 +350,6 @@ Presentation
     }
     CodeFrame {
         title: "Live-coding"
-        titleColor: "#877"
-        textColor: "#655"
-        codeFontFamily: "Fira Code"
         code:
 "run():
   while(running):
@@ -245,7 +369,11 @@ Presentation
         command()
     else
       sleep()
-
+"
+    }
+    CodeFrame {
+        title: "Live-coding"
+        code:"
 wait_enough_time():
   pause = granularity - elapsed % granularity
 
@@ -261,12 +389,13 @@ wait_enough_time():
 
 "
     }
+
+
     Frame {
         title: "Performances"
-
+        ConstraintChart { }
         // Contraintes en série, en //, mélangé (avec différents pourcentages série / //
     }
-
     Frame {
         title: "Démo: temps"
         Photobooth {
@@ -384,10 +513,6 @@ wait_enough_time():
             " Échange de flux réparti au sein du graphe",
             " Temps musical"
         ]
-    }
-
-    Component.onCompleted:
-    {
     }
 
 }
