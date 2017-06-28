@@ -7,14 +7,14 @@ import CreativeControls 1.0 as CC
 Item
 {
     id:root
-    width: 640
-    height: 480
+    anchors.fill: parent
 
     Ossia.OSCQueryServer
     {
         id: oscqDevice
         oscPort: 4456
         wsPort: 6688
+        name: "photobooth"
     }
 
     Timer {
@@ -49,11 +49,11 @@ Item
             {
                 id: img
                 source: "file:pics/" + name;
-                width: 0.3 * root.width
-                height: 0.3 * root.height
+                width: 0.2 * root.width
+                height: 0.2 * root.height
 
-                x: ((root.width - width)/ 2)  * (1 + 0.8 * Math.cos(angle + 6.28 * index / photos.count))
-                y: ((root.height - height)/ 2) * (1 + 0.8 * Math.sin(angle + 6.28 * index / photos.count))
+                x: ((root.width - width)/ 2)  * (1 + 0.6 * Math.cos(angle + 6.28 * index / photos.count))
+                y: ((root.height - height)/ 2) * (1 + 0.6 * Math.sin(angle + 6.28 * index / photos.count))
             }
         }
         visible: false

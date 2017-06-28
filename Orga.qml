@@ -2,7 +2,9 @@ import QtQuick 2.0
 
 Item
 {
-    anchors.fill: parent
+    id: root
+    width: 1146
+    height: 500
 
     Rectangle {
         id: rectangle3
@@ -11,6 +13,7 @@ Item
         width: 555
         height: 479
         color: "#c5c4c4"
+        radius: 12
 
         Rectangle {
             id: rectangle2
@@ -72,7 +75,7 @@ Item
                 id: text3
                 x: 108
                 y: 138
-                text: qsTr("Modèles")
+                text: qsTr("Processus")
                 font.pixelSize: 30
                 font.styleName: "Fira Sans"
             }
@@ -120,7 +123,7 @@ Item
             Text {
                 id: text2
                 x: 23
-                y: 340
+                y: 349
                 text: qsTr("Portages")
                 font.pixelSize: 30
                 font.styleName: "Fira Sans"
@@ -150,7 +153,7 @@ Item
             Text {
                 id: text1
                 x: 96
-                y: 143
+                y: 148
                 text: qsTr("Protocoles")
                 font.pixelSize: 30
                 font.styleName: "Fira Sans"
@@ -242,67 +245,23 @@ Item
         width: 555
         height: 479
         color: "#c5c4c4"
+        radius: 12
         Rectangle {
             id: rectangle5
             x: 8
-            y: 63
-            width: 530
-            height: 189
+            y: 56
+            width: 335
+            height: 136
             color: "#d4cdc2"
             radius: 19
-            TextBox {
-                id: textBox19
-                x: 115
-                y: 66
-                width: 100
-                text: "Dataspace"
-            }
-
-            TextBox {
-                id: textBox20
-                x: 221
-                y: 66
-                width: 100
-                text: "Loop"
-            }
-
-            TextBox {
-                id: textBox21
-                x: 9
-                y: 66
-                width: 100
-                text: "Curve"
-            }
-
-            TextBox {
-                id: textBox22
-                x: 221
-                y: 10
-                width: 100
-                text: "Mapping"
-            }
-
-            TextBox {
-                id: textBox23
-                x: 115
-                y: 10
-                width: 100
-                text: "Dataflow"
-            }
-
-            TextBox {
-                id: textBox24
-                x: 9
-                y: 10
-                width: 100
-                text: "Scenario"
-            }
 
             Text {
                 id: text5
-                x: 108
-                y: 138
+                x: 123
+                y: 35
                 text: qsTr("Plugins")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: 30
                 font.styleName: "Fira Sans"
             }
@@ -311,17 +270,19 @@ Item
 
         Rectangle {
             id: rectangle7
-            x: 203
-            y: 268
+            x: 8
+            y: 204
             width: 335
-            height: 196
+            height: 259
             color: "#d4cdc2"
             radius: 19
             Text {
                 id: text7
-                x: 96
-                y: 143
-                text: qsTr("Protocoles")
+                x: 109
+                y: 193
+                text: qsTr("Addons")
+                anchors.horizontalCenterOffset: 0
+                anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 30
                 font.styleName: "Fira Sans"
             }
@@ -331,7 +292,7 @@ Item
                 x: 9
                 y: 10
                 width: 100
-                text: "OSC"
+                text: "Audio"
             }
 
             TextBox {
@@ -339,7 +300,7 @@ Item
                 x: 115
                 y: 10
                 width: 100
-                text: "MIDI"
+                text: "Pd"
             }
 
             TextBox {
@@ -347,7 +308,7 @@ Item
                 x: 221
                 y: 10
                 width: 100
-                text: "OSCQuery"
+                text: "Space"
             }
 
             TextBox {
@@ -355,7 +316,7 @@ Item
                 x: 9
                 y: 66
                 width: 100
-                text: "Série"
+                text: "Remote"
             }
 
             TextBox {
@@ -363,7 +324,7 @@ Item
                 x: 221
                 y: 66
                 width: 100
-                text: "..."
+                text: "Image"
             }
 
             TextBox {
@@ -371,7 +332,47 @@ Item
                 x: 115
                 y: 66
                 width: 100
-                text: "HTTP"
+                text: "Autom3D"
+            }
+
+            TextBox {
+                id: textBox36
+                x: 116
+                y: 122
+                width: 100
+                text: "Shader"
+            }
+
+            TextBox {
+                id: textBox37
+                x: 10
+                y: 122
+                width: 100
+                text: "Vidéo"
+            }
+
+            TextBox {
+                id: textBox38
+                x: 221
+                y: 178
+                width: 100
+                text: "Analysis"
+            }
+
+            TextBox {
+                id: textBox39
+                x: 9
+                y: 178
+                width: 100
+                text: "Tutorial"
+            }
+
+            TextBox {
+                id: textBox40
+                x: 222
+                y: 122
+                width: 100
+                text: "Network"
             }
             border.width: 5
         }
@@ -384,19 +385,40 @@ Item
             font.pixelSize: 30
             style: Text.Normal
         }
+
+        Rectangle {
+            id: rectangle6
+            x: 359
+            y: 56
+            width: 188
+            height: 280
+            color: "#d4cdc2"
+            radius: 19
+            Text {
+                id: text6
+                x: 123
+                y: 35
+                text: qsTr("Lib")
+                anchors.verticalCenter: parent.verticalCenter
+                font.pixelSize: 30
+                font.styleName: "Fira Sans"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            border.width: 5
+        }
     }
 
     TextBox {
         id: textBox
-        x: 612
-        y: 276
+        x: 962
+        y: 359
         text: "Éditeur"
     }
 
     TextBox {
         id: textBox1
-        x: 612
-        y: 335
+        x: 962
+        y: 415
         text: "Lecteur"
     }
 

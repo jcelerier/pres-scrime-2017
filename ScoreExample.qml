@@ -24,6 +24,7 @@ QQ2.Item {
         id: oscqDevice
         oscPort: 4455
         wsPort: 5577
+        name: "3dscore"
     }
 
     Scene3D {

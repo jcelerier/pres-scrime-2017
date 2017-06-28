@@ -43,13 +43,15 @@ import QtQuick.Controls 2.1 as QC
 import CreativeControls 1.0 as CC
 import Ossia 1.0 as Ossia
 import Qt.labs.presentation 1.0
-import QtQuick 2.0
+import QtQuick 2.5
+import QtMultimedia 5.5
 
 
 Presentation
 {
     id: presentation
 
+    mouseNavigation: false
     width: 1280
     height: 720
     /*
@@ -89,7 +91,8 @@ Presentation
         title: "Organisation générale"
         Orga
         {
-
+            scale: 1.5
+            anchors.centerIn: parent
         }
     }
 
@@ -119,21 +122,144 @@ Presentation
 
     Frame {
         title: "Démo: contrôle"
-        PdClient {
+        PdClient { }
+    }
 
+    Frame {
+        title: "OSCQuery"
+        Oscquery { }
+    }
+
+    Frame {
+        centeredText: "Modèle de temps"
+    }
+
+    Frame {
+        title: "Objets: graphe temporel"
+        Image {
+            source: "file:images/iscore-example.png"
+            anchors.centerIn: parent
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            mipmap: true
+            antialiasing: true
         }
+    }
+    Frame {
+        title: "Objets: arbre hiérarchique"
+        Row {
+            anchors.fill: parent
+            anchors.centerIn: parent
+            Image {
+                source: "file:images/score.png"
+                height: parent.height
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                mipmap: true
+                antialiasing: true
+            }
 
+            Image {
+                source: "file:images/hierarch-graph.png"
+                fillMode: Image.PreserveAspectFit
+                height: parent.height
+                smooth: true
+                mipmap: true
+                antialiasing: true
+            }
+        }
     }
 
     Frame {
-        centeredText: "Modèles de temps"
+        title: "Interaction"
+        content: [
+            "Choix: interaction introduit un tic de décalage"
+        ]
+        Video {
+            source: "images/exec1.mp4"
+            autoLoad: true
+            autoPlay: true
+            loops: Animation.Infinite
+            x: 50
+            y: 100
+            width: 410
+            height: 216
+            antialiasing: false
+            smooth: false
+        }
     }
+    Frame {
+        title: "Horloges"
+        content: [
+            "Unité de temps abstraite",
+            " Ex.: A: 300, B: 5000",
+            "Choix d'horloge définit les durées",
+            " Travail en ms ou échantillons",
+            " Choix par défaut fait dans i-score: ",
+            "  Dates données en ms",
+            "  Exécution calculée en us pour précision du ralenti"
+        ]
+    }
+    Frame {
+        title: "Live-coding"
+        content: [
+            "Réactivité dans la boucle d'exécution",
+            " Communication inter-thread: commandes d'édition",
+            " Évite overhead des mutex",
+            "  pay for what you use"
+        ]
+    }
+    Frame {
+        title: "Live-coding"
+        Image {
+            source: "file:images/exec.png"
+            fillMode: Image.PreserveAspectFit
+            width: parent.width
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
+    }
+    CodeFrame {
+        title: "Live-coding"
+        titleColor: "#877"
+        textColor: "#655"
+        codeFontFamily: "Fira Code"
+        code:
+"run():
+  while(running):
+    if(!paused)
+      wait_enough_time()
 
-    Frame {
-        title: "Objets"
-    }
-    Frame {
-        title: "Interactivité"
+      # Progression du temps dans les objets
+      root.tick(time_increment)
+
+      # Envoi messages réseaux
+      launch(root.state())
+
+      # Application modifications potentielles
+      # size(edition_commands) rarement > 2
+      while(!empty(edition_commands))
+        command = pop(edition_commands)
+        command()
+    else
+      sleep()
+
+wait_enough_time():
+  pause = granularity - elapsed % granularity
+
+  # Déterminé expérimentalement pour garantir
+  # l'absence d'over-sleep sur une machine moyenne
+  while(pause > 5000)
+    t1 = now()
+    sleep(pause / 2)
+    t2 = now()
+    pause = pause - (t2 - t1)
+
+  busy_wait(pause)
+
+"
     }
     Frame {
         title: "Performances"
@@ -143,20 +269,12 @@ Presentation
 
     Frame {
         title: "Démo: temps"
+        Photobooth {
+        }
     }
 
     Frame {
-        title: "Slide {} Element"
-        fontFamily: "Fira Sans"
-        content: [
-            "Bullet points",
-            "Should be short",
-            "And to the point",
-            " Sub point",
-            "  Sub Sub point",
-            " Sub point"
-        ]
-
+        title: "Démo: live coding"
     }
 
     Frame {
@@ -165,9 +283,54 @@ Presentation
 
     Frame {
         title: "Contrôle pur"
+        Image {
+            source: "file:images/hierarch-graph.png"
+            fillMode: Image.PreserveAspectFit
+            height: parent.height
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
     }
     Frame {
         title: "Interactivité"
+        content: ["2 possibilités pour les auteurs",
+            " 1. "]
+    }
+    CodeFrame {
+        title: "Contrôle pur: My First Process"
+        titleColor: "#877"
+        textColor: "#655"
+        codeFontFamily: "Fira Code"
+        code:
+"class mon_process
+ : public ossia::time_process
+{
+  public:
+    mon_process(Destination d): m_dest{d} { }
+
+    auto state(ossia::time_value date, double pos) override
+      -> ossia::state_element
+    {
+      return ossia::message(m_dest, rand());
+    }
+
+  private:
+    Destination m_dest;
+};"
+    }
+    CodeFrame {
+        title: "Contrôle pur: My First JS Process"
+        titleColor: "#877"
+        textColor: "#655"
+        codeFontFamily: "Fira Code"
+        code:
+"function(t) {
+  return {
+    address: 'my:/address'
+    value: Math.rand()
+  };
+}"
     }
     Frame {
         title: "Espaces de données"
@@ -181,9 +344,8 @@ Presentation
 
     Frame {
         title: "Démo: données"
-        // TODO: avoir du pd qui transforme son en paramètre. par ex. radius sphères.
-        ScoreExample {
-        }
+        // TODO: avoir du pd qui transforme son en paramètre avec peek. Potentiellement sur tablette?. par ex. radius sphères.
+        ScoreExample { }
     }
 
 
@@ -201,10 +363,27 @@ Presentation
     }
 
     Frame {
-        title: "Démo"
+        title: "Démo: répartition"
     }
     Frame {
         title: "Conclusion"
+        content: [
+            "Ce qu'il manque:",
+            " Live-coding réparti",
+            " Échange de flux réparti au sein du graphe",
+            " Temps musical",
+            " Symbolique pour répartition",
+            " Support des types de données 2D / 3D : image, vidéo"
+        ]
+    }
+    Frame {
+        title: "Temps musical"
+        content: [
+            "Spécifications",
+            " Live-coding réparti",
+            " Échange de flux réparti au sein du graphe",
+            " Temps musical"
+        ]
     }
 
     Component.onCompleted:
