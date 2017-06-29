@@ -234,8 +234,15 @@ ossia_node_t ossia_node_add_child(
     }
     Frame {
         title: "Définition d'un arbre"
+        content: [
+            "Manuellement dans le code",
+            "Manuellement dans i-score",
+            "Automatiquement via déclaration d'objets dans une application créative.",
+            "Automatiquement via découverte réseau",
+            "Automatiquement via des objets prédéfinis (MIDI).",
+            "Via code QML. Utilité pour protocoles qui n'ont pas une structure arborescente évidente."
+        ]
     }
-
 
     Frame {
         title: "Performances"
@@ -244,7 +251,6 @@ ossia_node_t ossia_node_add_child(
         // Performances de la communication réseau, par OSC.
         // Performances de la création / modification d'un arbre
         // Performances de la découverte automatique par OSCQuery, en local, en distant
-
     }
 
     Frame {
@@ -254,7 +260,7 @@ ossia_node_t ossia_node_add_child(
 
     Frame {
         title: "OSCQuery"
-        //Oscquery { }
+        Oscquery { }
     }
 
     Frame {
@@ -421,11 +427,7 @@ wait_enough_time():
             antialiasing: true
         }
     }
-    Frame {
-        title: "Interactivité"
-        content: ["2 possibilités pour les auteurs",
-            " 1. "]
-    }
+
     CodeFrame {
         title: "Contrôle pur: My First Process"
         titleColor: "#877"
@@ -448,6 +450,7 @@ wait_enough_time():
     Destination m_dest;
 };"
     }
+
     CodeFrame {
         title: "Contrôle pur: My First JS Process"
         titleColor: "#877"
@@ -461,12 +464,44 @@ wait_enough_time():
   };
 }"
     }
-    Frame {
-        title: "Espaces de données"
-    }
+
     Frame {
         title: "Audio: avec la LibAudioStream"
+        Image {
+            source: "file:images/mixage.png"
+            fillMode: Image.PreserveAspectFit
+            width: parent.width
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
     }
+
+    Frame {
+        title: "Espaces de données"
+        content: [
+            "Problématique: compositeurs travaillent avec quantités physiques",
+            " Couleur: RGB, HSV, ...",
+            " Position: cartésien, polaire...",
+            "Fonctionnement: ",
+            " Combinaison et conversion automatique selon l'ordre d'exécution"
+        ]
+    }
+
+    Frame {
+        title: "Espaces de données"
+
+        AnimatedImage
+        {
+            source: "file:images/dataspace.gif"
+            fillMode: Image.PreserveAspectFit
+            width: parent.width
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
+    }
+
     Frame {
         title: "Généralisation: flots de données"
     }
@@ -483,12 +518,69 @@ wait_enough_time():
     }
     Frame {
         title: "Arbre: que manque-t-il ?"
+        Image {
+            source: "file:images/current.png"
+            anchors.centerIn: parent
+            fillMode: Image.PreserveAspectFit
+            height: parent.height
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
     }
     Frame {
+        title: "Arbre: que manque-t-il ?"
+        Image {
+            source: "file:images/objective.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+            height: parent.height
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
+    }
+    CodeFrame {
         title: "i-score as a library"
+        code:
+'Ossia.OSCQueryServer {
+    id: dev
+    name: "myDevice"
+}
+
+Ossia.Player {
+    id: player
+}
+
+Component.onCompleted: {
+    player.registerDevice(dev);
+    player.load("my_score.scorejson")
+    player.play()
+}'
     }
     Frame {
         title: "Répartition"
+        Image {
+            source: "file:images/free.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+            height: parent.height
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
+    }
+    Frame {
+        title: "Répartition"
+        Image {
+            source: "file:images/shared.png"
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+            height: parent.height
+            smooth: true
+            mipmap: true
+            antialiasing: true
+        }
     }
 
     Frame {
@@ -500,11 +592,13 @@ wait_enough_time():
             "Ce qu'il manque:",
             " Live-coding réparti",
             " Échange de flux réparti au sein du graphe",
-            " Temps musical",
             " Symbolique pour répartition",
-            " Support des types de données 2D / 3D : image, vidéo"
+            "Mais aussi:",
+            " Temps musical",
+            " Support des types de données 2D / 3D : image, vidéo, shader, glTF..."
         ]
     }
+    /*
     Frame {
         title: "Temps musical"
         content: [
@@ -514,5 +608,6 @@ wait_enough_time():
             " Temps musical"
         ]
     }
+    */
 
 }
