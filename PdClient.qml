@@ -155,7 +155,7 @@ Item {
             }
 
             Container {
-                width: kbd.width + 20
+                width: kbd.width
                 height: kbd.height + 20
                 Keyboard
                 {
@@ -173,6 +173,27 @@ Item {
 
                         // The value changes are sent to CC 34 on channel 1
                         node: '/note'
+                        device: oscqDevice
+                    }
+                }
+            }
+
+            Container {
+                width: tgl.width + 20
+                height: tgl.height + 20
+                Switch
+                {
+                    id: tgl
+                    property bool toggled: false
+                    onStateChanged: toggled = (state == "ON");
+
+                    width: 100
+                    height: 100
+
+                    Ossia.Binding {
+                        on: tgl.toggled
+
+                        node: '/play'
                         device: oscqDevice
                     }
                 }

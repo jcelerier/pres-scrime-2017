@@ -36,6 +36,7 @@ Item
     }
 
     Item {
+        rotation: 1
         Ossia.Property on rotation {
             device: oscqDevice
         }
@@ -51,6 +52,8 @@ Item
                 source: "file:pics/" + name;
                 width: 0.2 * root.width
                 height: 0.2 * root.height
+                rotation: rp.rotation * 360
+                scale: rp.rotation
 
                 x: ((root.width - width)/ 2)  * (1 + 0.6 * Math.cos(angle + 6.28 * index / photos.count))
                 y: ((root.height - height)/ 2) * (1 + 0.6 * Math.sin(angle + 6.28 * index / photos.count))
@@ -88,16 +91,15 @@ Item
         height: 400
     }
 
-    GaussianBlur {
+    GammaAdjust {
         source: rp
         anchors.fill: parent
-        radius: 64
-        Ossia.Property on radius {
+        gamma: 10
+        Ossia.Property on gamma {
             device: oscqDevice
-            min: 0
-            max: 64
+            min: -10
+            max: 10
         }
-        samples: 64
     }
 
 
@@ -114,6 +116,9 @@ Item
 
             onPressed: clickedImage = index
         }
+    }
+    Component.onCompleted: {
+        oscqDevice.recreate(root)
     }
 
 }

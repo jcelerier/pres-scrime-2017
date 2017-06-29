@@ -7,9 +7,7 @@ ChartView {
     anchors.fill: parent
     legend.visible: true
     titleFont.pointSize: 30
-    antialiasing: true
-    animationDuration: 3000
-    animationOptions: ChartView.AllAnimations
+
     theme: ChartView.ChartThemeDark
     ValueAxis {
         id: axisX

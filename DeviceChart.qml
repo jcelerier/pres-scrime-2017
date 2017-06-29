@@ -12,11 +12,7 @@ Item {
             title: "Lecture oscquery (μs) = f(nombre de nœuds)"
             legend.visible: true
             titleFont.pointSize: 30
-            antialiasing: true
-            animationDuration: 3000
-            animationOptions: ChartView.AllAnimations
             theme: ChartView.ChartThemeDark
-
 
             LineSeries {
                 axisX:
@@ -63,9 +59,6 @@ Item {
             title: "Écriture oscquery (ms) = f(nombre de nœuds)"
             legend.visible: true
             titleFont.pointSize: 30
-            antialiasing: true
-            animationDuration: 3000
-            animationOptions: ChartView.AllAnimations
             theme: ChartView.ChartThemeDark
             ValueAxis {
                 min: 0

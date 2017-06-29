@@ -1,4 +1,3 @@
-#version 150 core
 
 in vec3 vertexPosition;
 out vec3 worldPosition;

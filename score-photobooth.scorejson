@@ -1,0 +1,1224 @@
+{
+    "Document": {
+        "BaseScenario": {
+            "Constraint": {
+                "Center": 8402.524589458279,
+                "Components": [
+                ],
+                "DefaultDuration": 75000,
+                "EndState": 1,
+                "FullViewRack": [
+                    {
+                        "Process": 1
+                    }
+                ],
+                "GuiDuration": 16840.20618556701,
+                "HeightPercentage": 0,
+                "MaxDuration": "inf",
+                "MaxInf": true,
+                "Metadata": {
+                    "Color": "Transparent1",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "score-photobooth"
+                },
+                "MinDuration": 75000,
+                "MinNull": false,
+                "ObjectName": "Scenario::ConstraintModel",
+                "Processes": [
+                    {
+                        "Comments": [
+                        ],
+                        "Components": [
+                        ],
+                        "Constraints": [
+                            {
+                                "Center": 0,
+                                "Components": [
+                                ],
+                                "DefaultDuration": 4388.659793814433,
+                                "EndState": 2,
+                                "FullViewRack": [
+                                ],
+                                "GuiDuration": 4827.525773195877,
+                                "HeightPercentage": 0.03266666666666666,
+                                "MaxDuration": 4388.659793814433,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "blvd37musk58"
+                                },
+                                "MinDuration": 4388.659793814433,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "Processes": [
+                                ],
+                                "Rigidity": true,
+                                "SmallViewRack": [
+                                ],
+                                "SmallViewShown": false,
+                                "StartDate": 0,
+                                "StartState": 1,
+                                "Zoom": -1,
+                                "id": 1
+                            },
+                            {
+                                "Center": 0,
+                                "Components": [
+                                ],
+                                "DefaultDuration": 7564.722467339603,
+                                "EndState": 4,
+                                "FullViewRack": [
+                                    {
+                                        "Process": 1
+                                    }
+                                ],
+                                "GuiDuration": 8321.194714073565,
+                                "HeightPercentage": 0.04733333333333333,
+                                "MaxDuration": 7564.722467339603,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "digs29deny70"
+                                },
+                                "MinDuration": 7564.722467339603,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "Processes": [
+                                    {
+                                        "Address": {
+                                            "Accessors": [
+                                            ],
+                                            "Unit": "none",
+                                            "address": {
+                                                "Device": "photobooth",
+                                                "Path": "radius"
+                                            }
+                                        },
+                                        "Components": [
+                                        ],
+                                        "Curve": {
+                                            "ObjectName": "CurveModel",
+                                            "Segments": [
+                                                {
+                                                    "End": [
+                                                        1,
+                                                        0
+                                                    ],
+                                                    "Following": null,
+                                                    "ObjectName": "CurveSegmentModel",
+                                                    "Power": 11.05,
+                                                    "Previous": null,
+                                                    "Start": [
+                                                        0,
+                                                        0.905
+                                                    ],
+                                                    "id": 1,
+                                                    "uuid": "1e7cb83f-4e47-4b14-814d-2242a9c75991"
+                                                }
+                                            ],
+                                            "id": 45345
+                                        },
+                                        "Duration": 7564.722467339603,
+                                        "Height": 300,
+                                        "Max": 64,
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Automation.1"
+                                        },
+                                        "Min": 0,
+                                        "ObjectName": "Automation",
+                                        "Tween": false,
+                                        "id": 1,
+                                        "uuid": "d2a67bd8-5d3f-404e-b6e9-e350cf2a833f"
+                                    }
+                                ],
+                                "Rigidity": true,
+                                "SmallViewRack": [
+                                    {
+                                        "Height": 200,
+                                        "Process": 1,
+                                        "Processes": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "SmallViewShown": true,
+                                "StartDate": 4388.659793814433,
+                                "StartState": 3,
+                                "Zoom": -1,
+                                "id": 2
+                            }
+                        ],
+                        "Duration": 75000,
+                        "Events": [
+                            {
+                                "Components": [
+                                ],
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 0,
+                                "Extent": [
+                                    0.02,
+                                    0.03266666666666666
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Event.0"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "Offset": 0,
+                                "States": [
+                                    0,
+                                    1
+                                ],
+                                "TimeNode": 0,
+                                "id": 0
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 4388.659793814433,
+                                "Extent": [
+                                    0.03266666666666666,
+                                    0.04733333333333333
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "made35ever93"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "Offset": 0,
+                                "States": [
+                                    2,
+                                    3
+                                ],
+                                "TimeNode": 1,
+                                "id": 1
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 11953.382261154036,
+                                "Extent": [
+                                    0.04733333333333333,
+                                    0.04733333333333333
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "loop63bows78"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "Offset": 0,
+                                "States": [
+                                    4
+                                ],
+                                "TimeNode": 2,
+                                "id": 2
+                            }
+                        ],
+                        "Height": 1500,
+                        "Metadata": {
+                            "Color": "",
+                            "Comment": "",
+                            "Label": "",
+                            "ScriptingName": "Scenario.1"
+                        },
+                        "ObjectName": "Scenario",
+                        "StartEventId": 0,
+                        "StartStateId": 0,
+                        "StartTimeNodeId": 0,
+                        "States": [
+                            {
+                                "Components": [
+                                ],
+                                "Event": 0,
+                                "HeightPercentage": 0.02,
+                                "Messages": {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none"
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.0"
+                                },
+                                "NextConstraint": null,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": null,
+                                "StateProcesses": [
+                                ],
+                                "id": 0
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Event": 0,
+                                "HeightPercentage": 0.03266666666666666,
+                                "Messages": {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none"
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.1"
+                                },
+                                "NextConstraint": 1,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": null,
+                                "StateProcesses": [
+                                ],
+                                "id": 1
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Event": 1,
+                                "HeightPercentage": 0.03266666666666666,
+                                "Messages": {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none"
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.2"
+                                },
+                                "NextConstraint": null,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 1,
+                                "StateProcesses": [
+                                ],
+                                "id": 2
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Event": 1,
+                                "HeightPercentage": 0.04733333333333333,
+                                "Messages": {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                        {
+                                            "Accessors": [
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "Accessors": [
+                                                    ],
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                        {
+                                                            "Process": 1,
+                                                            "Value": {
+                                                                "Type": "Float",
+                                                                "Value": 57.91999816894531
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Name": "radius",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ],
+                                                    "Unit": "none"
+                                                }
+                                            ],
+                                            "Following": [
+                                            ],
+                                            "Name": "photobooth",
+                                            "Previous": [
+                                            ],
+                                            "Priorities": [
+                                                1,
+                                                2,
+                                                0
+                                            ],
+                                            "Unit": "none"
+                                        }
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none"
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.3"
+                                },
+                                "NextConstraint": 2,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": null,
+                                "StateProcesses": [
+                                ],
+                                "id": 3
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Event": 2,
+                                "HeightPercentage": 0.04733333333333333,
+                                "Messages": {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                        {
+                                            "Accessors": [
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "Accessors": [
+                                                    ],
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "radius",
+                                                    "Previous": [
+                                                        {
+                                                            "Process": 1,
+                                                            "Value": {
+                                                                "Type": "Float",
+                                                                "Value": 0
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ],
+                                                    "Unit": "none"
+                                                }
+                                            ],
+                                            "Following": [
+                                            ],
+                                            "Name": "photobooth",
+                                            "Previous": [
+                                            ],
+                                            "Priorities": [
+                                                1,
+                                                2,
+                                                0
+                                            ],
+                                            "Unit": "none"
+                                        }
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none"
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.4"
+                                },
+                                "NextConstraint": null,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 2,
+                                "StateProcesses": [
+                                ],
+                                "id": 4
+                            }
+                        ],
+                        "TimeNodes": [
+                            {
+                                "Components": [
+                                ],
+                                "Date": 0,
+                                "Events": [
+                                    0
+                                ],
+                                "Extent": [
+                                    0.02,
+                                    0.03266666666666666
+                                ],
+                                "Metadata": {
+                                    "Color": "Gray",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "TimeNode.0"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                            {
+                                                "Children": [
+                                                ],
+                                                "Relation": {
+                                                    "LHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": true
+                                                        }
+                                                    },
+                                                    "Op": 0,
+                                                    "RHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 0
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Date": 4388.659793814433,
+                                "Events": [
+                                    1
+                                ],
+                                "Extent": [
+                                    0.03266666666666666,
+                                    0.04733333333333333
+                                ],
+                                "Metadata": {
+                                    "Color": "Gray",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "jobs96viva44"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                            {
+                                                "Children": [
+                                                ],
+                                                "Relation": {
+                                                    "LHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": true
+                                                        }
+                                                    },
+                                                    "Op": 0,
+                                                    "RHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 1
+                            },
+                            {
+                                "Components": [
+                                ],
+                                "Date": 11953.382261154036,
+                                "Events": [
+                                    2
+                                ],
+                                "Extent": [
+                                    0.04733333333333333,
+                                    0.04733333333333333
+                                ],
+                                "Metadata": {
+                                    "Color": "Gray",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "jade2aden12"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                            {
+                                                "Children": [
+                                                ],
+                                                "Relation": {
+                                                    "LHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": true
+                                                        }
+                                                    },
+                                                    "Op": 0,
+                                                    "RHS": {
+                                                        "Value": {
+                                                            "Type": "Bool",
+                                                            "Value": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 2
+                            }
+                        ],
+                        "id": 1,
+                        "uuid": "de035912-5b03-49a8-bc4d-b2cba68e21d9"
+                    }
+                ],
+                "Rigidity": false,
+                "SmallViewRack": [
+                ],
+                "SmallViewShown": false,
+                "StartDate": 0,
+                "StartState": 0,
+                "Zoom": 35.15700665045305,
+                "id": 0
+            },
+            "EndEvent": {
+                "Components": [
+                ],
+                "Condition": {
+                    "Children": [
+                    ],
+                    "RootNode": {
+                    }
+                },
+                "Date": 75000,
+                "Extent": [
+                    0.4,
+                    0.6
+                ],
+                "Metadata": {
+                    "Color": "Emphasis4",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "Event.1"
+                },
+                "ObjectName": "Scenario::EventModel",
+                "Offset": 0,
+                "States": [
+                    1
+                ],
+                "TimeNode": 1,
+                "id": 1
+            },
+            "EndState": {
+                "Components": [
+                ],
+                "Event": 1,
+                "HeightPercentage": 0,
+                "Messages": {
+                    "Accessors": [
+                    ],
+                    "Children": [
+                    ],
+                    "Following": [
+                    ],
+                    "Name": "",
+                    "Previous": [
+                    ],
+                    "Priorities": [
+                        1,
+                        2,
+                        0
+                    ],
+                    "Unit": "none"
+                },
+                "Metadata": {
+                    "Color": "",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "State.1"
+                },
+                "NextConstraint": null,
+                "ObjectName": "Scenario::StateModel",
+                "PreviousConstraint": 0,
+                "StateProcesses": [
+                ],
+                "id": 1
+            },
+            "EndTimeNode": {
+                "Components": [
+                ],
+                "Date": 75000,
+                "Events": [
+                    1
+                ],
+                "Extent": [
+                    0.2,
+                    0.8
+                ],
+                "Metadata": {
+                    "Color": "Gray",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "TimeNode.1"
+                },
+                "ObjectName": "Scenario::TimeNodeModel",
+                "Trigger": {
+                    "Active": true,
+                    "Expression": {
+                        "Children": [
+                            {
+                                "Children": [
+                                ],
+                                "Relation": {
+                                    "LHS": {
+                                        "Value": {
+                                            "Type": "Bool",
+                                            "Value": true
+                                        }
+                                    },
+                                    "Op": 0,
+                                    "RHS": {
+                                        "Value": {
+                                            "Type": "Bool",
+                                            "Value": false
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "RootNode": {
+                        }
+                    }
+                },
+                "id": 1
+            },
+            "ObjectName": "Scenario::BaseScenario",
+            "StartEvent": {
+                "Components": [
+                ],
+                "Condition": {
+                    "Children": [
+                    ],
+                    "RootNode": {
+                    }
+                },
+                "Date": 0,
+                "Extent": [
+                    0.1,
+                    0.15
+                ],
+                "Metadata": {
+                    "Color": "Emphasis4",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "Event.0"
+                },
+                "ObjectName": "Scenario::EventModel",
+                "Offset": 0,
+                "States": [
+                    0
+                ],
+                "TimeNode": 0,
+                "id": 0
+            },
+            "StartState": {
+                "Components": [
+                ],
+                "Event": 0,
+                "HeightPercentage": 0,
+                "Messages": {
+                    "Accessors": [
+                    ],
+                    "Children": [
+                        {
+                            "Accessors": [
+                            ],
+                            "Children": [
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "clickedImage",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none",
+                                    "User": {
+                                        "Type": "Int",
+                                        "Value": 0
+                                    }
+                                },
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "rotation",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none",
+                                    "User": {
+                                        "Type": "Float",
+                                        "Value": 0
+                                    }
+                                },
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "radius",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none",
+                                    "User": {
+                                        "Type": "Float",
+                                        "Value": 64
+                                    }
+                                },
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "width",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none",
+                                    "User": {
+                                        "Type": "Float",
+                                        "Value": 0
+                                    }
+                                },
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "color",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "color.argb",
+                                    "User": {
+                                        "Type": "Vec4f",
+                                        "Value": [
+                                            1,
+                                            1,
+                                            0.7529411911964417,
+                                            0.7960784435272217
+                                        ]
+                                    }
+                                },
+                                {
+                                    "Accessors": [
+                                    ],
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "toggled",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    "Unit": "none",
+                                    "User": {
+                                        "Type": "Bool",
+                                        "Value": false
+                                    }
+                                }
+                            ],
+                            "Following": [
+                            ],
+                            "Name": "photobooth",
+                            "Previous": [
+                            ],
+                            "Priorities": [
+                                1,
+                                2,
+                                0
+                            ],
+                            "Unit": "none"
+                        }
+                    ],
+                    "Following": [
+                    ],
+                    "Name": "",
+                    "Previous": [
+                    ],
+                    "Priorities": [
+                        1,
+                        2,
+                        0
+                    ],
+                    "Unit": "none"
+                },
+                "Metadata": {
+                    "Color": "",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "State.0"
+                },
+                "NextConstraint": 0,
+                "ObjectName": "Scenario::StateModel",
+                "PreviousConstraint": null,
+                "StateProcesses": [
+                ],
+                "id": 0
+            },
+            "StartTimeNode": {
+                "Components": [
+                ],
+                "Date": 0,
+                "Events": [
+                    0
+                ],
+                "Extent": [
+                    0.2,
+                    0.8
+                ],
+                "Metadata": {
+                    "Color": "Gray",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "TimeNode.0"
+                },
+                "ObjectName": "Scenario::TimeNodeModel",
+                "Trigger": {
+                    "Active": false,
+                    "Expression": {
+                        "Children": [
+                            {
+                                "Children": [
+                                ],
+                                "Relation": {
+                                    "LHS": {
+                                        "Value": {
+                                            "Type": "Bool",
+                                            "Value": true
+                                        }
+                                    },
+                                    "Op": 0,
+                                    "RHS": {
+                                        "Value": {
+                                            "Type": "Bool",
+                                            "Value": false
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "RootNode": {
+                        }
+                    }
+                },
+                "id": 0
+            },
+            "id": 0
+        },
+        "ObjectName": "Scenario::ScenarioDocumentModel",
+        "id": 1
+    },
+    "Plugins": {
+        "Explorer::DeviceDocumentPlugin": {
+            "Children": [
+                {
+                    "Children": [
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                    "Tuple": {
+                                        "Max": [
+                                            {
+                                            },
+                                            {
+                                            },
+                                            {
+                                            },
+                                            {
+                                            }
+                                        ],
+                                        "Min": [
+                                            {
+                                            },
+                                            {
+                                            },
+                                            {
+                                            },
+                                            {
+                                            }
+                                        ],
+                                        "Values": [
+                                            [
+                                            ],
+                                            [
+                                            ],
+                                            [
+                                            ],
+                                            [
+                                            ]
+                                        ]
+                                    }
+                                },
+                                "Extended": {
+                                    "extended_type": null
+                                },
+                                "Name": "color",
+                                "RepetitionFilter": false,
+                                "Type": "Vec4f",
+                                "Unit": "color.argb",
+                                "Value": [
+                                    1,
+                                    1,
+                                    0.7529411911964417,
+                                    0.7960784435272217
+                                ],
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        },
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                    "Float": {
+                                        "Max": 1,
+                                        "Min": 0
+                                    }
+                                },
+                                "Extended": {
+                                },
+                                "Name": "width",
+                                "RepetitionFilter": false,
+                                "Type": "Float",
+                                "Unit": "none",
+                                "Value": 0,
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        },
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                },
+                                "Extended": {
+                                },
+                                "Name": "toggled",
+                                "RepetitionFilter": false,
+                                "Type": "Bool",
+                                "Unit": "none",
+                                "Value": false,
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        },
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                },
+                                "Extended": {
+                                },
+                                "Name": "rotation",
+                                "RepetitionFilter": false,
+                                "Type": "Float",
+                                "Unit": "none",
+                                "Value": 0,
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        },
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                    "Float": {
+                                        "Max": 64,
+                                        "Min": 0
+                                    }
+                                },
+                                "Extended": {
+                                },
+                                "Name": "radius",
+                                "RepetitionFilter": false,
+                                "Type": "Float",
+                                "Unit": "none",
+                                "Value": 64,
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        },
+                        {
+                            "AddressSettings": {
+                                "ClipMode": "Free",
+                                "Domain": {
+                                },
+                                "Extended": {
+                                },
+                                "Name": "clickedImage",
+                                "RepetitionFilter": false,
+                                "Type": "Int",
+                                "Unit": "none",
+                                "Value": 0,
+                                "ioType": "<->"
+                            },
+                            "Children": [
+                            ]
+                        }
+                    ],
+                    "DeviceSettings": {
+                        "Host": "ws://laptop-jcelerier.local.:6688",
+                        "Name": "photobooth",
+                        "Protocol": "1187fefe-0468-49d1-9eb7-92d7f4e11f6f"
+                    }
+                }
+            ],
+            "DocumentPostModelPart": {
+            },
+            "ObjectName": "Explorer::DeviceDocumentPlugin",
+            "RootNode": {
+            },
+            "id": 3,
+            "uuid": "6e610e1f-9de2-4c36-90dd-0ef570002a21"
+        }
+    },
+    "Version": 2
+}
